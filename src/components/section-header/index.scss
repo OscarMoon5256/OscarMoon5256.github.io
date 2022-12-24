@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.section-header-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 32px;
+
+  .section-header {
+    padding-bottom: 5px;
+    font-weight: 700;
+    font-size: 30px;
+  }
+}

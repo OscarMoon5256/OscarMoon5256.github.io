@@ -1,29 +1,29 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import { rhythm } from '../utils/typography'
+import { IntroduceSection } from '../components/introduce-section';
+import { TimeStampSection } from '../components/timestamp-section';
+import { ProjectSection } from '../components/project-section';
+import { Layout } from '../layout'
 import * as Lang from '../constants'
 
-export default ({ data }) => {
-  const resumes = data.allMarkdownRemark.edges
+export default ({ data, location }) => {
+  const metaData = data.site.siteMetadata;
+  const { about, language } = metaData;
+  const { author, timestamps, projects } = about;
 
+  const resumes = data.allMarkdownRemark.edges
   const resume = resumes
     .filter(({ node }) => node.frontmatter.lang === Lang.ENGLISH)
     .map(({ node }) => node)[0]
 
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(0.5)} ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(
-          3 / 4
-        )}`,
-      }}
-    >
+    <Layout location={location} title={metaData.title}>
+      <IntroduceSection author={author} language={language} />
       <div dangerouslySetInnerHTML={{ __html: resume.html }} />
-    </div>
+      <TimeStampSection timestamps={timestamps} />
+      <ProjectSection projects={projects} />
+    </Layout>
   )
 }
 
@@ -43,5 +43,51 @@ export const pageQuery = graphql`
         }
       }
     }
+    site {
+      siteMetadata {
+        title
+        description
+        language
+        about {
+          author {
+            name
+            bio {
+              role
+              description
+              thumbnail
+            },
+            social {
+              github
+              linkedIn
+              email
+            }
+          }
+          timestamps {
+            date
+            activity
+            links {
+              post
+              github
+              demo
+              googlePlay
+              appStore
+            }
+          }
+          projects {
+            title
+            description
+            techStack
+            thumbnailUrl
+            links {
+              post
+              github
+              demo
+              googlePlay
+              appStore
+            }
+          }
+        }
+      }
+    }
   }
-`
+`;

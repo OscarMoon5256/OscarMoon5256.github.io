@@ -1,0 +1,58 @@
+@import '../../styles/variables.scss';
+
+.project-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .project {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 100%;
+
+    .head {
+      margin-bottom: 10px;
+      line-height: 30px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .body {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .content {
+        margin-top: 0px;
+      }
+
+      .project-thumbnail {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .tech-stack {
+        display: flex;
+        margin-bottom: 10px;
+
+        .tech {
+          border-radius: 10px;
+          font-size: 15px;
+          font-weight: 500;
+          margin-right: 5px;
+          padding: 5px 7px 5px 7px;
+        }
+      }
+
+      .description {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+    }
+  }
+}

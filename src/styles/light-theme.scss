@@ -19,6 +19,34 @@ body.light {
     }
   }
 
+  // about
+  .introduce-section {
+    color: $dark-gray;
+  }
+
+  .section-header-wrapper {
+    .section-header {
+      border-bottom: 4px solid $light-underline-color;
+      color: $dark-gray;
+    }
+  }
+
+  .icon {
+    color: $light-icon-color;
+  }
+
+  .project-section {
+    .project {
+      .body {
+        .tech-stack {
+          .tech {
+            background-color: $light-tech-background-color;
+          }
+        }
+      }
+    }
+  }
+
   .category-container {
     border-top: 1px solid $light-category-border-color;
     border-bottom: 1px solid $light-category-border-color;

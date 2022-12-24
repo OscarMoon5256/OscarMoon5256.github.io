@@ -26,6 +26,7 @@ $blockquote-text-color: #999;
 // code
 $inline-dimmed-color: #ece5f1;
 $inline-text-color: #4b2043;
+$light-code-block-background-color: #283238;
 
 // category
 $light-category-border-color: #ecf0f2;
@@ -34,6 +35,11 @@ $light-category-background-color: #f4f7f8;
 $light-category-text-color: #666;
 $light-category-highlight-text-color: #636c6e;
 $light-category-item-color: #fff;
+
+// about
+$light-underline-color: #282c35;
+$light-icon-color: #a8a8a8;
+$light-tech-background-color: #f3f3f4;
 
 /**
  * @dark theme
@@ -56,3 +62,10 @@ $dark-category-text-color: #d8d7d7;
 
 $dark-category-highlight-border-color: #666;
 $dark-category-highlight-text-color: #fff;
+
+$dark-code-block-background-color: #283238;
+
+// about
+$dark-underline-color: #fff;
+$dark-icon-color: #fff;
+$dark-tech-background-color: #323a42;

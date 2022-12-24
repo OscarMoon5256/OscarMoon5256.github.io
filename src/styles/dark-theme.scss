@@ -20,6 +20,34 @@ body.dark {
     }
   }
 
+  // about
+  .introduce-section {
+    color: $dark-light-font-color;
+  }
+
+  .section-header-wrapper {
+    .section-header {
+      border-bottom: 4px solid $dark-underline-color;
+      color: $dark-light-font-color;
+    }
+  }
+
+  .icon {
+    color: $dark-icon-color;
+  }
+
+  .project-section {
+    .project {
+      .body {
+        .tech-stack {
+          .tech {
+            background-color: $dark-tech-background-color;
+          }
+        }
+      }
+    }
+  }
+
   .category-container {
     border-top: 1px solid $dark-category-border-color;
     border-bottom: 1px solid $dark-category-border-color;

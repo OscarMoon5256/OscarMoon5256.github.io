@@ -57,6 +57,28 @@ pre[class*='language-']::-webkit-scrollbar {
   display: none; // Safari and Chrome
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(98, 92, 96, 0.7);
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(241, 237, 233, 0.5);
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+::selection {
+  background-color: rgba(104, 104, 172, 0.8);
+  color: rgba(255, 255, 255, 1);
+}
+
 /* Code blocks */
 pre[class*='language-'] {
   padding: 1.2em;
@@ -67,7 +89,7 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: #212121;
+  background: #283238;
 }
 
 /* Inline code */
