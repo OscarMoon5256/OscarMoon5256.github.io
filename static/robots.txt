@@ -1,2 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
+Sitemap: https://oscarmoon5256.github.io/sitemap.xml
+Host: https://oscarmoon5256.github.io
