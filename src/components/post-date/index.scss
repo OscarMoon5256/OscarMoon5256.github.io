@@ -1,5 +1,18 @@
 .post-date {
-  text-align: right;
-  font-size: 12px;
-  font-style: italic;
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 320px;
+  transform: translateX(-50%);
+  margin-bottom: 80px;
+  font-size: 18px;
+  color: #fff;
+
+  .post-date-icon {
+    svg {
+      margin-top: 6px;
+      margin-right: 8px;
+      font-size: 18px;
+    }
+  }
 }

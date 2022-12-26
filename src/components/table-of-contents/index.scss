@@ -1,0 +1,309 @@
+@import '../../styles/responsive-device.scss';
+@import '../../styles/variables.scss';
+
+.toc-open-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 2px 14px;
+  border-radius: 0 0 0 4px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  cursor: pointer;
+  animation: 1.5s infinite alternate emphasize-btn;
+
+  &::before {
+    content: 'TOC';
+  }
+}
+
+.toc-content {
+  position: fixed;
+  top: 100px;
+  right: -300px;
+  width: 300px;
+  border-right: none;
+  border-radius: 30px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  z-index: 30;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  .toc-list-btn {
+    display: inline-block;
+    .red {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 8px;
+      height: 8px;
+      background-color: #fc625d;
+      border-radius: 50%;
+    }
+    .yellow {
+      position: absolute;
+      top: 20px;
+      left: 35px;
+      width: 8px;
+      height: 8px;
+      background-color: #fdbc40;
+      border-radius: 50%;
+    }
+    .green {
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      width: 8px;
+      height: 8px;
+      background-color: #35cd4b;
+      border-radius: 50%;
+    }
+  }
+
+  .toc-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    padding: 2px;
+    cursor: pointer;
+
+    svg {
+      font-size: 14px;
+    }
+
+    .toc-close-icon {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 16px;
+      height: 16px;
+      background: transparent;
+    }
+  }
+
+  .toc {
+    height: 100%;
+    padding: 20px 10px 30px 25px;
+    box-sizing: border-box;
+    font-size: 90%;
+    line-height: 1.5;
+    overflow: auto;
+
+    ul {
+      margin: 0;
+      padding-left: 16px;
+      padding-bottom: 5px;
+      font-weight: 700;
+      overflow: visible;
+      list-style-position: outside;
+      list-style-image: none;
+
+      ul {
+        font-size: 89.95%;
+        font-weight: 550;
+        ul {
+          font-size: 89.9%;
+          font-weight: 400;
+        }
+      }
+    }
+
+    li {
+      display: list-item;
+      padding: 2px;
+    }
+
+    // &::before {
+    //   content: 'Contents';
+    //   margin: 10px 0 20px;
+    //   display: block;
+    //   text-align: center;
+    //   font-size: 1.4em;
+    //   font-weight: 900;
+    // }
+
+    // &::after {
+    //   content: 'The End';
+    //   margin: 20px 0 10px;
+    //   display: block;
+    //   text-align: center;
+    //   font-size: 1.4em;
+    //   font-weight: 900;
+    // }
+  }
+
+  &.open {
+    right: 0px;
+  }
+}
+
+.toc-header {
+  position: relative;
+  display: block;
+  padding: 5px 5px 0px 5px;
+  z-index: 2;
+  transition: all 1s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -100%;
+    width: 0%;
+    height: 100%;
+    border-radius: 5%;
+    opacity: 1;
+    transition: all 0.35s;
+    z-index: 1;
+  }
+}
+
+.toc-header-active {
+  &::before {
+    left: 0;
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@include tablet-portrait {
+  .toc-container {
+    .toc-open-btn {
+      animation: 1.5s infinite alternate emphasize-btn-mobile;
+    }
+
+    .toc-content {
+      right: -340px;
+      width: 340px;
+      font-size: 88%;
+
+      ul {
+        ul {
+          font-size: 87%;
+          font-weight: 550;
+          ul {
+            font-size: 86%;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .toc-open-btn {
+    display: none;
+  }
+  .toc-content {
+    display: none;
+  }
+  .toc-container {
+    .toc-open-btn {
+      animation: 1.5s infinite alternate emphasize-btn-mobile;
+    }
+
+    .toc-content {
+      right: -320px;
+      width: 320px;
+      font-size: 86%;
+
+      ul {
+        ul {
+          font-size: 85%;
+          font-weight: 550;
+          ul {
+            font-size: 84%;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .toc-open-btn {
+    display: none;
+  }
+  .toc-content {
+    display: none;
+  }
+  .toc-container {
+    .toc-open-btn {
+      animation: 1.5s infinite alternate emphasize-btn-mobile;
+    }
+
+    .toc-content {
+      right: -300px;
+      width: 300px;
+      font-size: 84%;
+
+      ul {
+        ul {
+          font-size: 83%;
+          font-weight: 550;
+          ul {
+            font-size: 82%;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+// container가 sticky라서 layout에 overflow:hidden 적용시 sticky가 먹히지 않음. (참고한 heropy블로그에서는 fixed) 따라서 애니메이션 변경함.
+@-webkit-keyframes emphasize-btn {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes emphasize-btn {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+}
+
+@-webkit-keyframes emphasize-btn-mobile {
+  0% {
+    -webkit-transform: translateX(15px);
+    transform: translateX(15px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+
+@keyframes emphasize-btn-mobile {
+  0% {
+    -webkit-transform: translateX(15px);
+    transform: translateX(15px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}

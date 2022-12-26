@@ -1,16 +1,19 @@
 import { graphql } from 'gatsby'
 import _ from 'lodash'
-import React, { useMemo, useRef, useEffect, useState } from 'react'
+import React, { useMemo } from 'react'
 import { Bio } from '../components/bio'
+import { SEO } from '../components/seo'
 import { Category } from '../components/category'
+import { CategorySide } from '../components/category-side'
 import { Contents } from '../components/contents'
-import { Head } from '../components/head'
-import { HOME_TITLE } from '../constants'
+import { ScrollIndicatorMini } from '../components/scroll-indicator/scroll-indicator-mini'
+import { BLOG_TITLE } from '../constants/meta'
 import { useCategory } from '../hooks/useCategory'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import { useRenderedCount } from '../hooks/useRenderedCount'
 import { useScrollEvent } from '../hooks/useScrollEvent'
 import { Layout } from '../layout'
+import { rhythm } from '../utils/typography'
 import * as Dom from '../utils/dom'
 import * as EventManager from '../utils/event-manager'
 
@@ -28,16 +31,12 @@ export default ({ data, location }) => {
     () => _.uniq(posts.map(({ node }) => node.frontmatter.category)),
     []
   )
-  const bioRef = useRef(null)
-  const [DEST, setDEST] = useState(316)
-  const [count, countRef, increaseCount] = useRenderedCount()
-  const [category, selectCategory] = useCategory(DEST)
 
-  useEffect(tabRef => {
-    setDEST(!bioRef.current ? 316 : bioRef.current.getBoundingClientRect().bottom + window.pageYOffset + 24)
-  }, [bioRef.current])
+  const [count, countRef, increaseCount] = useRenderedCount()
+  const [category, selectCategory] = useCategory()
 
   useIntersectionObserver()
+
   useScrollEvent(() => {
     const currentPos = window.scrollY + window.innerHeight
     const isTriggerPos = () => getDistance(currentPos) < BASE_LINE
@@ -52,19 +51,45 @@ export default ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteMetadata.title}>
-      <Head title={HOME_TITLE} keywords={siteMetadata.keywords} />
-      <Bio ref={bioRef} />
+      <SEO title={BLOG_TITLE} keywords={siteMetadata.keywords} />
+      <ScrollIndicatorMini isOnPage />
+      <div
+        style={{
+          marginLeft: `auto`,
+          marginRight: `auto`,
+          maxWidth: rhythm(24),
+          paddingTop: rhythm(0),
+        }}
+      >
+        <Bio />
+      </div>
+      <CategorySide
+        categories={categories}
+        category={category}
+        selectCategory={selectCategory}
+      />
       <Category
         categories={categories}
         category={category}
         selectCategory={selectCategory}
       />
-      <Contents
-        posts={posts}
-        countOfInitialPost={countOfInitialPost}
-        count={count}
-        category={category}
-      />
+      <div
+        style={{
+          marginLeft: `auto`,
+          marginRight: `auto`,
+          maxWidth: rhythm(24),
+          padding: `${rhythm(1.5)} ${rhythm(3 / 4)} ${rhythm(1)} ${rhythm(
+            3 / 4
+          )}`,
+        }}
+      >
+        <Contents
+          posts={posts}
+          countOfInitialPost={countOfInitialPost}
+          count={count}
+          category={category}
+        />
+      </div>
     </Layout>
   )
 }
@@ -94,6 +119,7 @@ export const pageQuery = graphql`
             title
             category
             draft
+            tags
           }
         }
       }

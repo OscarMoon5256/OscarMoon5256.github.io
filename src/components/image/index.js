@@ -30,10 +30,8 @@ export const Image = ({ src, ...rest }) => {
   const { node: { childImageSharp, publicURL, extension } = {} } = match;
 
   if (extension === 'svg' || !childImageSharp) {
-    console.log('no', match)
     return <img src={publicURL} alt={publicURL} {...rest} />;
   }
-  console.log('yes', match)
 
   return <GatsbyImage image={childImageSharp.gatsbyImageData} alt={publicURL} {...rest} />;
 };

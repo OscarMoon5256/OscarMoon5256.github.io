@@ -1,0 +1,98 @@
+.post-tag {
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  border-radius: 3px 0 0 3px;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  text-align: center;
+
+  &:hover {
+    animation: tag-flutter 2s infinite linear;
+  }
+
+  &::before {
+    content: '';
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 10px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-bottom: 13px solid transparent;
+    border-top: 13px solid transparent;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .post-tag-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    .totalCount {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      float: right;
+      margin-left: 0.7rem;
+      margin-right: 0;
+      font-size: 0.7rem;
+      border-radius: 10px;
+      width: 18px;
+      height: 18px;
+      text-align: center;
+    }
+  }
+}
+
+@-webkit-keyframes tag-flutter {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(-5deg);
+  }
+  35% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes tag-flutter {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(-5deg);
+  }
+  35% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

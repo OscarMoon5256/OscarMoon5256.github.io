@@ -71,6 +71,22 @@ body.light {
     }
   }
 
+  .category-side-wrapper {
+    .category-side-container {
+      .category-side {
+        .category-side-list {
+          color: white;
+
+          .item-side {
+            span {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .thumbnail {
     h3 {
       color: $dark-gray;
@@ -95,6 +111,87 @@ body.light {
     a {
       background-color: $navigator-background-color;
       color: $navigator-text-color;
+    }
+  }
+
+  .post-header {
+    .parallax > use:nth-child(1) {
+      fill: $light-background-color;
+      opacity: 0.3;
+    }
+  }
+  .post-header {
+    .parallax > use:nth-child(2) {
+      fill: $light-background-color;
+      opacity: 0.5;
+    }
+  }
+  .post-header {
+    .parallax > use:nth-child(3) {
+      fill: $light-background-color;
+      opacity: 0.7;
+    }
+  }
+
+  // tag
+  .post-tag {
+    background: $light-tag-color;
+    a {
+      color: $dimmed-color;
+    }
+
+    &::before {
+      background: $dimmed-color;
+      box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    }
+
+    &::after {
+      background: white;
+      border-left: 10px solid $light-tag-color;
+    }
+
+    &:hover {
+      background-color: $light-tag-complementary;
+      color: white;
+    }
+
+    &:hover::after {
+      border-left-color: $light-tag-complementary;
+    }
+
+    .totalCount {
+      background-color: $light-tag-total-count;
+    }
+  }
+
+  .toc-content {
+    color: $light-toc-header-color;
+    border: 1px solid $light-toc-border-color;
+    background-color: $light-toc-background-color;
+
+    .toc-close-btn {
+      color: $light-toc-close-btn-color;
+    }
+
+    .toc {
+      a {
+        color: $light-toc-content-color;
+      }
+      a:hover {
+        color: $light-toc-content-hover-color;
+      }
+    }
+  }
+
+  .scroll-indicator {
+    li {
+      background-color: $light-scroll-indicator-color;
+      a {
+        color: $light-scroll-indicator-number-color;
+      }
+      &.active {
+        background-color: transparent;
+      }
     }
   }
 }

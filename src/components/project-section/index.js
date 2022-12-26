@@ -6,7 +6,6 @@ import './index.scss';
 
 export const ProjectSection = ({ projects }) => {
   if (!projects || projects.length < 2) return null;
-  console.log('project', projects)
   return (
     <div className="project-section">
       <SectionHeader title="Projects" />

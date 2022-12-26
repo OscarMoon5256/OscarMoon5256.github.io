@@ -22,6 +22,11 @@ h2 {
   border-bottom: none;
 }
 
+img:hover {
+  transform: scale(1.01);
+  filter: drop-shadow(0 0 0.15rem rgb(170, 170, 170));
+}
+
 blockquote {
   color: $blockquote-text-color;
 }

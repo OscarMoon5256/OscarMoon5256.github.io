@@ -23,6 +23,9 @@ $navigator-text-color: #cc007a;
 $navigator-background-color: #fceff7;
 $blockquote-text-color: #999;
 
+$light-scroll-indicator-number-color: #333;
+$light-scroll-indicator-color: #ccc;
+
 // code
 $inline-dimmed-color: #ece5f1;
 $inline-text-color: #4b2043;
@@ -35,6 +38,28 @@ $light-category-background-color: #f4f7f8;
 $light-category-text-color: #666;
 $light-category-highlight-text-color: #636c6e;
 $light-category-item-color: #fff;
+
+// side category
+$light-category-text-color: #000000;
+$light-category-selected-text-color: #19647d;
+
+// tags
+$light-tag-color: #00008086;
+$light-tag-complementary: rgb(131, 5, 30);
+$light-tag-total-count: rgba(0, 0, 0, 0.2);
+
+// toc
+$light-toc-background-color: rgba(255, 255, 255, 0.6);
+$light-toc-header-color: #b0b0b0;
+$light-toc-content-color: #34495e;
+$light-toc-content-hover-color: #99660f;
+$light-toc-border-color: rgba(229, 231, 235, 0.7);
+$light-toc-close-btn-color: #34495e;
+$light-toc-before-after-color: #726158;
+
+$light-toc-active-color: #e84855;
+$light-toc-header-active-color: #e84855;
+$light-toc-header-before-backgroundcolor: rgba(220, 20, 60, 0.25);
 
 // about
 $light-underline-color: #282c35;
@@ -63,9 +88,39 @@ $dark-category-text-color: #d8d7d7;
 $dark-category-highlight-border-color: #666;
 $dark-category-highlight-text-color: #fff;
 
+$dark-scroll-indicator-number-color: #fff;
+$dark-scroll-indicator-color: #d8d7d7;
+
 $dark-code-block-background-color: #283238;
+
+$dark-tag-color: rgba(178, 93, 235, 0.31);
+$dark-tag-complementary: rgb(95, 5, 23);
+$dark-tag-total-count: rgba(255, 255, 255, 0.2);
+
+// toc
+$dark-toc-background-color: rgba(40, 44, 53, 0.6);
+$dark-toc-header-color: #b0b0b0;
+$dark-toc-content-color: rgba(255, 255, 255, 0.9);
+$dark-toc-content-hover-color: #e6d545;
+$dark-toc-border-color: rgba(229, 231, 235, 0.7);
+$dark-toc-close-btn-color: rgba(255, 255, 255, 0.9);
+$dark-toc-before-after-color: #ebebeb;
+
+$dark-toc-active-color: orange; // rgb(200, 100, 0);
+$dark-toc-header-active-color: orange;
+$dark-toc-header-before-backgroundcolor: rgba(255, 166, 0, 0.26);
+
+// side category
+$dark-category-text-color: #ecf0f2;
+$dark-category-selected-text-color: #f4f7f8;
 
 // about
 $dark-underline-color: #fff;
 $dark-icon-color: #fff;
 $dark-tech-background-color: #323a42;
+
+// Responsive Device Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 767px;
+$breakpoint-tablet-portrait: 1024px;
+$breakpoint-desktop: 1280px;

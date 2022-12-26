@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import { IntroduceSection } from '../components/introduce-section';
 import { TimeStampSection } from '../components/timestamp-section';
 import { ProjectSection } from '../components/project-section';
+import { rhythm } from '../utils/typography'
 import { Layout } from '../layout'
 import * as Lang from '../constants'
 
@@ -19,11 +20,22 @@ export default ({ data, location }) => {
 
   return (
     <Layout location={location} title={metaData.title}>
-      <IntroduceSection author={author} language={language} />
-      <div dangerouslySetInnerHTML={{ __html: resume.html }} />
-      <TimeStampSection timestamps={timestamps} />
-      <ProjectSection projects={projects} />
-    </Layout>
+      <div
+        style={{
+          marginLeft: `auto`,
+          marginRight: `auto`,
+          maxWidth: rhythm(28),
+          padding: `${rhythm(1.5)} ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(
+            3 / 4
+          )}`,
+        }}
+      >
+        <IntroduceSection author={author} language={language} />
+        <div dangerouslySetInnerHTML={{ __html: resume.html }} />
+        <TimeStampSection timestamps={timestamps} />
+        <ProjectSection projects={projects} />
+      </div>
+    </Layout >
   )
 }
 

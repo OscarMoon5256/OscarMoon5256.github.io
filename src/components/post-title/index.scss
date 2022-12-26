@@ -1,0 +1,13 @@
+.post-title {
+  position: absolute;
+  left: 50%;
+  top: 200px;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 70%;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.1;
+  color: #fff;
+}

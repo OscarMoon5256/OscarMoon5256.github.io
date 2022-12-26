@@ -8,4 +8,13 @@ body {
   -webkit-text-size-adjust: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s, color 0.3s;
+
+  &::after {
+    transition: all 1s;
+  }
+}
+
+.layout-wrapper {
+  position: relative;
+  z-index: 1;
 }

@@ -1,0 +1,27 @@
+.post-category-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 140px;
+  transform: translateX(-50%);
+
+  .post-category {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+    padding: 0.3em 1em;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    background-color: #f65660;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.01);
+      transition-duration: 0.5s;
+      filter: drop-shadow(0 0 0.15rem rgb(170, 170, 170));
+    }
+  }
+}
