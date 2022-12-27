@@ -66,6 +66,10 @@ $light-underline-color: #282c35;
 $light-icon-color: #a8a8a8;
 $light-tech-background-color: #f3f3f4;
 
+// floating button
+$light-icon-color: #f8f8f8;
+$light-icon-backgrond-color: #bfbfbf;
+
 /**
  * @dark theme
  */
@@ -118,6 +122,10 @@ $dark-category-selected-text-color: #f4f7f8;
 $dark-underline-color: #fff;
 $dark-icon-color: #fff;
 $dark-tech-background-color: #323a42;
+
+// floating button
+$dark-icon-color: #e2e2e2;
+$dark-icon-backgrond-color: #54575c;
 
 // Responsive Device Breakpoints
 $breakpoint-mobile: 480px;

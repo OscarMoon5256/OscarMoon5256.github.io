@@ -37,17 +37,8 @@ export default ({ data, pageContext, location }) => {
   const metaData = data.site.siteMetadata
   const { title, comment, siteUrl, author, sponsor } = metaData
   const { disqusShortName, utterances } = comment
-  const { tableOfContents } = post
+  const { tableOfContents, timeToRead } = post
   const { title: postTitle, date, category } = post.frontmatter
-
-  const handleTocContentClose = () => {
-    const tocContent = Dom.getElement(`.${className.toc_content}`)
-    if (!tocContent.classList[1]) return;
-    const isOpen = Dom.togleClass(tocContent, 'open')
-    const isDisplay = isOpen ? 'none' : 'block'
-    const themeSwitch = Dom.getElement(`.${className.theme_switch}`)
-    themeSwitch.style.display = isDisplay
-  }
 
   return (
     <Layout location={location} title={title}>
@@ -56,14 +47,13 @@ export default ({ data, pageContext, location }) => {
         <TableOfContents toc={tableOfContents} />
       </TopStickyContainer>
 
-      <PostHeader />
       <SEO title={postTitle} description={post.excerpt} />
+      <PostHeader />
       <PostCategory category={category} />
       <PostTitle title={postTitle} />
-      <PostDate date={date} />
+      <PostDate date={date} timeToRead={timeToRead} />
       <ScrollIcom />
       <div
-        onClick={handleTocContentClose}
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
@@ -116,6 +106,7 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 280)
       html
       tableOfContents
+      timeToRead
       frontmatter {
         title
         date(formatString: "YYYY. MM. DD")

@@ -87,6 +87,30 @@ body.light {
     }
   }
 
+  // floating button
+  .floating-icon {
+    svg {
+      margin-top: 7px;
+      font-size: 30px;
+      color: $light-icon-color;
+    }
+  }
+  .fab-action {
+    background: $light-icon-backgrond-color;
+  }
+
+  .fab-action-1:hover {
+    background-color: rgb(43, 123, 177);
+  }
+
+  .fab-action-2:hover {
+    background-color: rgb(216, 83, 136);
+  }
+
+  .fab-action-3:hover {
+    background-color: rgb(162, 174, 66);
+  }
+
   .thumbnail {
     h3 {
       color: $dark-gray;
@@ -115,21 +139,8 @@ body.light {
   }
 
   .post-header {
-    .parallax > use:nth-child(1) {
-      fill: $light-background-color;
-      opacity: 0.3;
-    }
-  }
-  .post-header {
-    .parallax > use:nth-child(2) {
-      fill: $light-background-color;
-      opacity: 0.5;
-    }
-  }
-  .post-header {
     .parallax > use:nth-child(3) {
       fill: $light-background-color;
-      opacity: 0.7;
     }
   }
 
@@ -180,7 +191,18 @@ body.light {
       a:hover {
         color: $light-toc-content-hover-color;
       }
+      &::before {
+        color: rgb(162, 174, 66);
+      }
+
+      &::after {
+        color: rgb(162, 174, 66);
+      }
     }
+  }
+
+  .toc-active {
+    color: rgb(230, 109, 112) !important;
   }
 
   .scroll-indicator {

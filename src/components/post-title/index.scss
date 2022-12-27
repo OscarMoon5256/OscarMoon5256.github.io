@@ -1,5 +1,6 @@
 .post-title {
   position: absolute;
+  z-index: -1;
   left: 50%;
   top: 200px;
   transform: translateX(-50%);

@@ -15,7 +15,7 @@ import './index.scss'
 const HEADER_OFFSET_Y = 180
 
 function getHeaderElements() {
-  const headerSelectors = `.${className.post_content} > h2, h3, h4, h5, h6`
+  const headerSelectors = `.${className.post_content} > h0, h1, h2, h3, h4, h5, h6`
   return Array.from(Dom.getElements(headerSelectors))
 }
 

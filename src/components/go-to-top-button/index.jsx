@@ -12,7 +12,9 @@ export function GoToTopButton() {
         <button
             onClick={goToTop}
         >
-            <ArrowUpwardRoundedIcon />
+            <div className="floating-icon icon">
+                <ArrowUpwardRoundedIcon />
+            </div>
         </button>
     )
 }

@@ -18,11 +18,11 @@ function viewScrollPercent() {
 
   for (let i = 0; i < indicatorElements.length; i++) {
     const indicatorElement = indicatorElements[i]
-    // const postHeader = Dom.getElement(`.post-header`)
+    // const postHeader = Dom.getElement(`.post-title`)
     // if (scrollNumber > 0) {
-    //   postHeader.style.opacity = 0.1
+    //   postHeader.classList.add('opacity');
     // } else {
-    //   postHeader.style.opacity = 1
+    //   postHeader.classList.remove('opacity');
     // }
     if (i === scrollNumber) {
       indicatorElement.classList.add('active')

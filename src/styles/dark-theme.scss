@@ -72,6 +72,30 @@ body.dark {
     }
   }
 
+  // floating button
+  .floating-icon {
+    svg {
+      margin-top: 7px;
+      font-size: 30px;
+      color: $dark-icon-color;
+    }
+  }
+  .fab-action {
+    background: $dark-icon-backgrond-color;
+  }
+
+  .fab-action-1:hover {
+    background-color: rgb(43, 123, 177);
+  }
+
+  .fab-action-2:hover {
+    background-color: rgb(216, 83, 136);
+  }
+
+  .fab-action-3:hover {
+    background-color: rgb(162, 174, 66);
+  }
+
   .thumbnail {
     h3 {
       color: $dark-light-font-color;
@@ -112,21 +136,8 @@ body.dark {
   }
 
   .post-header {
-    .parallax > use:nth-child(1) {
-      fill: $dark-background-color;
-      opacity: 0.3;
-    }
-  }
-  .post-header {
-    .parallax > use:nth-child(2) {
-      fill: $dark-background-color;
-      opacity: 0.5;
-    }
-  }
-  .post-header {
     .parallax > use:nth-child(3) {
       fill: $dark-background-color;
-      opacity: 0.7;
     }
   }
 
@@ -178,6 +189,10 @@ body.dark {
         color: $dark-toc-content-hover-color;
       }
     }
+  }
+
+  .toc-active {
+    color: rgb(230, 109, 112) !important;
   }
 
   .scroll-indicator {

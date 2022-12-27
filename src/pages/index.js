@@ -90,7 +90,7 @@ export default ({ data, location }) => {
           category={category}
         />
       </div>
-    </Layout>
+    </Layout >
   )
 }
 
@@ -114,6 +114,7 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
