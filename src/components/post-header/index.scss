@@ -8,11 +8,17 @@
     z-index: -10;
     position: relative;
     text-align: center;
-    background: linear-gradient(
-      60deg,
-      rgba(84, 58, 183, 1) 0%,
-      rgba(0, 172, 193, 1) 100%
-    );
+    height: 480px;
+    // background: linear-gradient(
+    //   60deg,
+    //   rgba(84, 58, 183, 1) 0%,
+    //   rgba(0, 172, 193, 1) 100%
+    // );
+    background: url(../../../assets/post-backgound.avif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: brightness(50%);
     color: white;
   }
 
@@ -32,12 +38,13 @@
   }
 
   .waves {
-    position: relative;
+    position: absolute;
+    z-index: -1;
     width: 100%;
-    height: 15vh;
-    margin-bottom: -7px; /*Fix for safari gap*/
+    height: 80px;
+    top: 450px;
     min-height: 100px;
-    max-height: 150px;
+    max-height: 130px;
   }
 
   /* Animation */
@@ -71,8 +78,9 @@
   /*Shrinking for mobile*/
   @media (max-width: 768px) {
     .waves {
-      height: 40px;
-      min-height: 40px;
+      top: 490px;
+      height: 50px;
+      min-height: 50px;
     }
     .content {
       height: 30vh;

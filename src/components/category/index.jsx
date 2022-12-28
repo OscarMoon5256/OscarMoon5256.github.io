@@ -64,7 +64,7 @@ export const Category = ({ categories, category, selectCategory }) => {
         role="tablist"
         id="category"
         style={{
-          margin: `0 -${rhythm(3 / 4)}`,
+          margin: `0 -${rhythm(1 / 200)}`,
           width: rhythm(26),
         }}
       >

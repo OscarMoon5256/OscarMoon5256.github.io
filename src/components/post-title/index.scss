@@ -11,4 +11,28 @@
   font-weight: bold;
   line-height: 1.1;
   color: #fff;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInLeft 1s cubic-bezier(0.55, 0.5, 0.45, 0.5);
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-70%, 0, 0);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translate3d(-48%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
 }
