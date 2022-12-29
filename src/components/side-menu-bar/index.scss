@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=IM+Fell+French+Canon&family=Shadows+Into+Light&display=swap');
+
+// Temporarily disable scrollbar
+body {
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.drawer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Cute Font', cursive;
+
+  .drawer-character-image-background {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+  }
+
+  .drawer-character-image {
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+    background-image: url(../../../content//assets/profile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    border-radius: 20px;
+  }
+
+  .drawer-character-name {
+    margin-top: 10px;
+    font-size: 30px;
+    padding-bottom: -20px;
+    color: black;
+  }
+
+  .drawer-character-desc {
+    font-size: 20px;
+    color: black;
+  }
+
+  .drawer-menu-list {
+    z-index: 10;
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 52px;
+    margin: 30px 0;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 5px 5px rgba(179, 179, 179, 0.5);
+
+    .drawer-menu-list-icon {
+      cursor: pointer;
+      margin-top: 15px;
+
+      &:hover {
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+        visibility: visible;
+        .drawer-menu-list-title {
+          transform: translateY(-10px);
+          transition: all 0.2s ease;
+          opacity: 1;
+        }
+      }
+
+      .drawer-menu-list-title {
+        text-align: center;
+        font-size: 16px;
+        color: black;
+        opacity: 0;
+      }
+
+      svg {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .divider {
+    content: '';
+    height: 1px;
+    width: 100%;
+    margin: 15px 0;
+    background-color: rgb(238, 235, 235);
+  }
+  .root {
+    margin-right: 60%;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #30cfd0 0%, #c21cc5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font: {
+      size: 22px;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}

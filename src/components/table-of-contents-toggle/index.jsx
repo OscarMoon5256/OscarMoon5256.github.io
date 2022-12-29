@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import TocIcon from '@mui/icons-material/Toc';
+import CloseIcon from '@mui/icons-material/Close';
 import * as Dom from '../../utils/dom'
 import { className } from '../../constants/className'
 import { useScrollEvent } from '../../hooks/useScrollEvent'
@@ -8,6 +8,10 @@ import * as EventManager from '../../utils/event-manager'
 
 import './index.scss'
 
+// TOC 읽은 주제 표시
+// @copyright
+// https://blueshw.github.io/2020/05/30/table-of-contents/
+// https://whywhyy.me/blog/2020/06/10/%EA%B3%A0%EC%98%A4%EA%B8%89%20%EB%AA%A9%EC%B0%A8(Table%20of%20Contents)%EC%9D%84%20%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EC%9E%90#%EB%AA%A9%ED%91%9C
 const HEADER_OFFSET_Y = 180
 
 function getHeaderElements() {
@@ -22,11 +26,38 @@ function getElementTopPos(element) {
   return top + currentoffsetY
 }
 
+function toggleTOCContent(tocContent) {
+  if (tocContent) {
+    const isOpen = Dom.togleClass(tocContent, 'open')
+    // TOC를 최상단에 오게하기위해 최상단에 위치해져있는 Element들의 z-index를 낮춰야 함.
+    const headerElementList = getHeaderElements()
+    const postTopestElementList = headerElementList.concat(
+      Array.from(Dom.getElements('.' + className.gatsby_plugin.post_img))
+    )
+
+    const guidedZIndex = isOpen ? -1 : 'auto'
+
+    postTopestElementList.forEach(postTopestElement => {
+      postTopestElement.style.zIndex = guidedZIndex
+    })
+  }
+}
+
+function onClickTOCOpen(e) {
+  const tocContent = e.target.nextSibling
+  toggleTOCContent(tocContent)
+}
+
+function onClickTOCClose(e) {
+  const tocContent = e.currentTarget.parentNode
+  toggleTOCContent(tocContent)
+}
+
 function getTOCHrefPullPath(headerID) {
   return `${window.location.pathname}#${encodeURI(headerID)}`
 }
 
-export const TableOfContents = ({ toc }) => {
+export const TableOfContentsToggle = ({ toc }) => {
   const onScroll = () => {
     const currentoffsetY = window.pageYOffset
     const headerElements = getHeaderElements()
@@ -70,17 +101,18 @@ export const TableOfContents = ({ toc }) => {
   })
 
   return (
-    <div className='table-of-contents'>
-      <div className="table-header" >
-        <div className="table-header-icon">
-          <TocIcon />
+    <div className="toc-wrapper">
+      <div className="toc-open-btn" onClick={onClickTOCOpen}></div>
+      <div className="toc-content">
+        <div className="toc-list-btn">
+          <div className="red" />
+          <div className="yellow" />
+          <div className="green" />
         </div>
-        <div className="table-header-title">
-          목차
+        <div className="toc-close-btn" onClick={onClickTOCClose}>
+          <span className="toc-close-icon"><CloseIcon /></span>
         </div>
-      </div>
-      <div className="content-table">
-        <div className="table" dangerouslySetInnerHTML={{ __html: toc }} />
+        <div className="toc" dangerouslySetInnerHTML={{ __html: toc }} />
       </div>
     </div>
   )

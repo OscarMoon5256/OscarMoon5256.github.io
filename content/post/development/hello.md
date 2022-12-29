@@ -3,6 +3,7 @@ title: 'Welcome Bee starter'
 date: 2020-07-04 12:21:13
 category: 'development'
 tags: ['javascript', 'algorithm']
+# summary: '1. Welcome Bee starter'
 draft: false
 ---
 
@@ -10,7 +11,7 @@ draft: false
 
 Welcome, Gatsby! This starter is full-package for your new blog!
 
-## 1. Support Four frontmatter
+## Support Four frontmatter
 
 ```
 ---
@@ -26,7 +27,7 @@ draft: false
 3. category
 4. draft
 
-## 2. Code highlighting
+## Code highlighting
 
 1. With [Fira Code](https://github.com/tonsky/FiraCode) font
 2. Support highlighting with [prism](https://github.com/PrismJS/prism)
@@ -58,7 +59,7 @@ _code_
 
 ![](./images/code_example.png)
 
-## 3. Support Markdown (h2)
+## Support Markdown (h2)
 
 1. With [Noto Sans](https://fonts.google.com/specimen/Noto+Sans) font
 2. Support header anchoring
@@ -73,13 +74,13 @@ _code_
 
 **bold** _italic_
 
-## 4. Support emoji :rocket:
+## Support emoji :rocket:
 
 Based on [emojione](https://github.com/emojione/emojione) :pray:
 
-## 5. Support light/dark mode
+## Support light/dark mode
 
-## 6. Support social sharing feature
+## Support social sharing feature
 
 1. Twitter
 2. Facebook
@@ -88,14 +89,14 @@ Based on [emojione](https://github.com/emojione/emojione) :pray:
 
 Set, `buyMeACoffeeId` of `gatsby-meta-config.js`
 
-## 7. Comments feature
+## Comments feature
 
 You can add comments feature by selecting one of them.
 
 - [ ] Disqus
 - [ ] utterances
 
-## 8. Support latex
+## Support latex
 
 Support latex rendering with katex plugin.
 
@@ -105,7 +106,7 @@ $$\prod_{i=a}^{b} f(i)$$
 
 $$\prod_{i=a}^{b} f(i)$$
 
-## 9. Other features of this template
+## Other features of this template
 
 1. You can add resume to `/about`
 2. Lazy rendering

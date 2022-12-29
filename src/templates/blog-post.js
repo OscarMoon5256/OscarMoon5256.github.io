@@ -14,7 +14,7 @@ import { PostHeader } from '../components/post-header'
 import { PostCategory } from '../components/post-category'
 import { PostNavigator } from '../components/post-navigator'
 import { Disqus } from '../components/disqus'
-import { TableOfContents } from '../components/table-of-contents'
+import { TableOfContentsToggle } from '../components/table-of-contents-toggle'
 import { ScrollIcom } from '../components/Scroll-Icom'
 import { ScrollerIndicator } from '../components/scroll-indicator'
 import { TopStickyContainer } from '../components/top-sticky-container'
@@ -38,13 +38,13 @@ export default ({ data, pageContext, location }) => {
   const { title, comment, siteUrl, author, sponsor } = metaData
   const { disqusShortName, utterances } = comment
   const { tableOfContents, timeToRead } = post
-  const { title: postTitle, date, category } = post.frontmatter
+  const { title: postTitle, date, category, summary } = post.frontmatter
 
   return (
     <Layout location={location} title={title}>
       <TopStickyContainer>
         <ScrollerIndicator />
-        <TableOfContents toc={tableOfContents} />
+        <TableOfContentsToggle toc={tableOfContents} />
       </TopStickyContainer>
 
       <SEO title={postTitle} description={post.excerpt} />
@@ -63,7 +63,7 @@ export default ({ data, pageContext, location }) => {
           )}`,
         }}
       >
-        <PostContainer html={post.html} />
+        <PostContainer html={post.html} toc={tableOfContents} summary={summary} />
         <SocialShare title={postTitle} author={author} />
         {!!sponsor.buyMeACoffeeId && (
           <SponsorButton sponsorId={sponsor.buyMeACoffeeId} />
@@ -111,6 +111,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY. MM. DD")
         category
+        summary
       }
     }
   }

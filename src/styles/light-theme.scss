@@ -47,6 +47,34 @@ body.light {
     }
   }
 
+  // Drawer
+  .drawer-wrapper {
+    .drawer-character-image-background {
+      height: 90px;
+      background-image: url(../../assets//drawer-light-background.avif);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: black;
+    }
+    .drawer-character-name {
+      color: black;
+    }
+    .drawer-character-desc {
+      color: black;
+    }
+    .drawer-menu-list {
+      .drawer-menu-list-icon {
+        .drawer-menu-list-title {
+          color: black;
+        }
+      }
+      svg {
+        font-size: 20px;
+        color: black;
+      }
+    }
+  }
+
   .category-container {
     border-top: 1px solid $light-category-border-color;
     border-bottom: 1px solid $light-category-border-color;
@@ -172,6 +200,39 @@ body.light {
 
     .totalCount {
       background-color: $light-tag-total-count;
+    }
+  }
+
+  // table-of-contents
+  .table-of-contents {
+    a {
+      background: linear-gradient(
+        to right,
+        $light-toc-content-hover-color,
+        $light-toc-content-hover-color 50%,
+        $light-toc-content-color 50%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 100%;
+      background-position: 100%;
+      transition: background-position 0.5s ease;
+      background-clip: text;
+    }
+  }
+
+  .table-header {
+    border: solid 1px $light-gray;
+  }
+
+  .content-table {
+    border: solid 1px $light-gray;
+  }
+
+  .content-table {
+    a:hover {
+      font-weight: bold;
+      background-position: 0 100%;
     }
   }
 

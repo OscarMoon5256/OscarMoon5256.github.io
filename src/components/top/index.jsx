@@ -1,13 +1,16 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { GitHubIcon } from '../social-share/github-icon'
-import Image from 'gatsby-image'
+import { SideMenuBar } from '../side-menu-bar'
 
 import './index.scss'
 
 export const Top = ({ title }) => {
   return (
     <div className="top">
+      <div>
+        <SideMenuBar />
+      </div>
       <Link to={`/`} className="link">
         {title}
       </Link>

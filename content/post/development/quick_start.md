@@ -3,12 +3,13 @@ title: 'Quick Start'
 date: 2020-07-05 17:21:13
 category: 'development'
 tags: ['javascript', 'algorithm']
+summary: 'Quick Start'
 draft: false
 ---
 
 # Getting Started 😎
 
-## 1. Create a Gatsby site.
+## Create a Gatsby site.
 
 ```sh
 # create a new Gatsby site using the blog starter
@@ -22,7 +23,7 @@ $ npm install -g gatsby-cli
 $ gatsby new my-blog-starter https://github.com/JaeYeopHan/gatsby-starter-bee
 ```
 
-## 2. Start developing.
+## Start developing.
 
 ```sh
 $ cd my-blog-starter/
@@ -30,7 +31,7 @@ $ npm start
 # open localhost:8000
 ```
 
-## 3. Add your content
+## Add your content
 
 You can write...
 
@@ -47,11 +48,11 @@ You can write...
 $ npm run post
 ```
 
-## 4. Fix meta data
+## Fix meta data
 
 You can fix meta data of blog in `/gatsby-meta-config.js` file.
 
-## 5. Publish with [netlify](https://netlify.com)
+## Publish with [netlify](https://netlify.com)
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JaeYeopHab/gatsby-starter-bee)
 
@@ -76,7 +77,7 @@ content
 
 # 🧐 Customize!
 
-### Gatsby config
+## Gatsby config
 
 ```
 /root

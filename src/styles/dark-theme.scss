@@ -48,6 +48,34 @@ body.dark {
     }
   }
 
+  // Drawer
+  .drawer-wrapper {
+    .drawer-character-image-background {
+      height: 100%;
+      background-image: url(../../assets//drawer-dark-background.avif);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: black;
+    }
+    .drawer-character-name {
+      color: white;
+    }
+    .drawer-character-desc {
+      color: white;
+    }
+    .drawer-menu-list {
+      .drawer-menu-list-icon {
+        .drawer-menu-list-title {
+          color: white;
+        }
+      }
+      svg {
+        font-size: 20px;
+        color: white;
+      }
+    }
+  }
+
   .category-container {
     border-top: 1px solid $dark-category-border-color;
     border-bottom: 1px solid $dark-category-border-color;
@@ -169,6 +197,39 @@ body.dark {
 
     .totalCount {
       background-color: $dark-tag-total-count;
+    }
+  }
+
+  // table-of-contents
+  .table-of-contents {
+    a {
+      background: linear-gradient(
+        to right,
+        $dark-toc-content-hover-color,
+        $dark-toc-content-hover-color 50%,
+        $dark-toc-content-color 50%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 100%;
+      background-position: 100%;
+      transition: background-position 0.5s ease;
+      background-clip: text;
+    }
+  }
+
+  .table-header {
+    border: solid 1px $middle-gray;
+  }
+
+  .content-table {
+    border: solid 1px $middle-gray;
+  }
+
+  .content-table {
+    a:hover {
+      font-weight: bold;
+      background-position: 0 100%;
     }
   }
 
