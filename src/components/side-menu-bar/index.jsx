@@ -86,6 +86,39 @@ export const SideMenuBar = ({ toc }) => {
                     </List>
                 </Collapse>
             </List>
+
+            <List
+                sx={{ width: '100%', maxWidth: 360 }}
+                component="nav"
+                aria-labelledby="nested-list-subheader"
+                subheader={
+                    <ListSubheader component="div" id="nested-list-subheader" color='inherit'>
+                        ... Programming
+                    </ListSubheader>
+                }
+            >
+                <ListItemButton onClick={handleClick}>
+                    <ListItemIcon>
+                        <CodeIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Mark Up" />
+                    {open ? <ExpandLess /> : <ExpandMore />}
+                </ListItemButton>
+                <Collapse in={open} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                        {['HTML', 'CSS'].map((text, index) => (
+                            <ListItem key={text} sx={{ pl: 2 }} disablePadding className='title'>
+                                <ListItemButton>
+                                    <ListItemIcon>
+                                        {index % 2 === 0 ? <HtmlIcon /> : <CssIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary={text} />
+                                </ListItemButton>
+                            </ListItem>
+                        ))}
+                    </List>
+                </Collapse>
+            </List>
         </Box>
     );
 

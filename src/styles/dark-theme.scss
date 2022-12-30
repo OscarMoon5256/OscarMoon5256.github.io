@@ -55,7 +55,9 @@ body.dark {
       background-image: url(../../assets//drawer-dark-background.avif);
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       background-color: black;
+      filter: brightness(0.5);
     }
     .drawer-character-name {
       color: white;
@@ -74,6 +76,72 @@ body.dark {
         color: white;
       }
     }
+  }
+
+  // list Sub Header style
+  .MuiListSubheader-colorInherit {
+    color: rgb(179, 179, 179);
+  }
+
+  // list Item style
+  .MuiList-padding > .MuiListItemButton-root {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(255, 117, 221, 0.8);
+      transform-origin: bottom right;
+      transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+    &:hover {
+      background-color: rgba(143, 143, 143, 0.5);
+    }
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+  .MuiListItemText-root {
+    color: white;
+  }
+
+  .css-10hburv-MuiTypography-root {
+    font-size: 20px;
+    font-family: 'Cute Font', cursive;
+  }
+  .MuiSvgIcon-fontSizeMedium {
+    color: white;
+  }
+  .css-10hburv-MuiTypography-root {
+    line-height: 0.8;
+  }
+
+  .MuiCollapse-wrapper {
+    background-color: rgba(232, 232, 232, 0.1);
+    margin-left: 8px;
+    width: 95%;
+    border-radius: 10px;
+  }
+
+  .MuiListItem-gutters
+    > .MuiButtonBase-root
+    > .MuiListItemText-root
+    > .MuiTypography-root {
+    color: rgb(79, 79, 79);
+    &:hover {
+      color: white;
+    }
+  }
+
+  .MuiList-root
+    > .MuiListItem-gutters
+    > .MuiButtonBase-root
+    > .MuiListItemIcon-root {
+    color: rgb(33, 37, 112);
   }
 
   .category-container {
